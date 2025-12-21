@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/let-me-test",
+  "name": "@monorepo/typescript-utils",
   "version": "0.1.0",
   "private": true,
   "scripts": {

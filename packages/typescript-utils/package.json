@@ -1,12 +1,8 @@
 {
-	"name": "@packages/test-package-1",
+	"name": "@packages/typescript-utils",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
-	"bin": {
-		"test-package-1-dev": "./lib/bin/app.cjs",
-		"test-package-1-prod": "./dist/bin/app.cjs"
-	},
 	"scripts": {
 		"------------------------INSTALLATION-------------------": "",
 		"prepare": "",
@@ -50,7 +46,5 @@
 		"provenance": true,
 		"tag": "latest"
 	},
-	"dependencies": {
-		"commander": "^14.0.1"
-	}
+	"dependencies": {	}
 }
