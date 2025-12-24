@@ -1,6 +1,7 @@
 import { defineConfig, UserConfig } from "tsdown";
 import copy from "rollup-plugin-copy";
 import { addNodeRequireShim } from "./internals";
+import noInternalExports from "@esplugins/no-internal-exports";
 
 //----------------------
 // Functions
@@ -29,7 +30,8 @@ export const BasicConfig = (isDev: boolean) =>
 			target: "es2020",
 			banner: addNodeRequireShim,
 			dts: true,
-			format: ["esm", "cjs"]
+			format: ["esm", "cjs"],
+			esbuildPlugins: [noInternalExports]
 		}
 	}) as const satisfies Record<string, UserConfig>;
 

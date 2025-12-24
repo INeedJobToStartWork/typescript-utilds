@@ -1,1 +1,1 @@
-export * from "./myFunction";
+export * from "./createInterceptedObject";

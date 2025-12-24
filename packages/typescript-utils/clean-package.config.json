@@ -1,23 +1,20 @@
 {
 	"indent": 4,
-	"remove": ["devDependencies", "dependencies", "lint-staged", "bin"],
+	"remove": ["devDependencies", "dependencies", "lint-staged", "bin", "publishConfig", "private"],
 	"replace": {
-		"name": "let-me-test",
-		"type": "commonjs",
+		"name": "typescript-utils",
+		"type": "module",
 		"scripts": {
 			"npm:postpack": "clean-package restore"
-		},
-		"bin": {
-			"Let-me-test": "./bin/app.mjs"
 		},
 		"exports": {
 			".": {
 				"types": {
-					"import": "./index.d.mts",
-					"require": "./index.d.ts"
+					"import": "./index.d.ts",
+					"require": "./index.d.cts"
 				},
-				"import": "./index.mjs",
-				"require": "./index.js"
+				"import": "./index.js",
+				"require": "./index.cjs"
 			}
 		}
 	}
