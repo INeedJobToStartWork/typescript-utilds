@@ -9,7 +9,7 @@ export type TBrand<T, Brand extends string> = T & { __brand: Brand };
 export type TRegExpFlags = "g" | "i" | "m" | "u" | "y";
 
 //----------------------
-// Types
+// Helpers
 //----------------------
 
 export type TPrettify<T> = {
@@ -20,3 +20,12 @@ export type TPrettify<T> = {
 export type TMerge<T> = {
 	[K in keyof T]: T[K];
 };
+
+//----------------------
+// Types
+//----------------------
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Class<T = object> = new (...args: any[]) => T;
+// export type Class<T = any> = new (...args: any[]) => T;
+// export type Class = new (...args: any[]) => any;

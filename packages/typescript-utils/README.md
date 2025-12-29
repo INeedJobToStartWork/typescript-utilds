@@ -4,3 +4,5 @@
 <hr/>
 
 Prepared Test package to Test CLI app with exported programmatic api
+
+- [ ] Name Conventions utils
