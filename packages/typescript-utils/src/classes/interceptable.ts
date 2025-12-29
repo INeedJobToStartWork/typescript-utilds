@@ -21,6 +21,27 @@ type TInterceptor<GValueType, GContext extends object> = {
 // Classes
 //----------------------
 
+/**
+ * Class for intercepting values.
+ *
+ * @example
+ * ```ts
+ * const stats = {
+ * 	hp:100,
+ * 	dmg:5,
+ * };
+ * const interceptors = {
+ * 	hp:new Interceptable<number, object>(),
+ * 	dmg:new Interceptable<number, object>(),
+ * };
+ * // Add Interceptors
+ * interceptors.hp.add((value, ctx) => value * 2);
+ * interceptors.dmg.add((value, ctx) => value + 10);
+ * // Get Intercepted Values
+ * console.log(interceptors.hp.getValue(stats,stats.hp)); // 200
+ * console.log(interceptors.dmg.getValue(stats,stats.dmg)); // 15
+ * ```
+ */
 export class Interceptable<GValueType, GContext extends object> {
 	//----
 	// Variables
@@ -80,7 +101,7 @@ export class Interceptable<GValueType, GContext extends object> {
 	}
 
 	/**
-	 * Remove an interceptor from the list of interceptors.
+	 * Remove the first interceptor from the list of interceptors.
 	 * @param interceptor The interceptor to remove.
 	 * @returns The instance of the class.
 	 */
