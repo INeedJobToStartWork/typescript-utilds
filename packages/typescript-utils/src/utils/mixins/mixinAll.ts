@@ -18,7 +18,7 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
 /**
  * Mixin all mixins and classes.
  *
- * @warning It does not shows error of missing mixin needed for XYZ.
+ * @remarks It does not shows error of missing mixin needed for XYZ.
  *
  * @example
  * ```ts

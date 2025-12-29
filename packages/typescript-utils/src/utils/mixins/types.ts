@@ -4,6 +4,13 @@ import type { Class } from "@/types";
 // Types
 //----------------------
 
+/**
+ * Type for a mixin.
+ *
+ * @remarks
+ * This utility type is useful for creating mixins that can be applied to classes.
+ *
+ */
 export type Mixin<TAdded> = <TBase extends Class>(
 	Base: TBase
 ) => new (...args: ConstructorParameters<TBase>) => InstanceType<TBase> & TAdded;
@@ -11,10 +18,19 @@ export type Mixin<TAdded> = <TBase extends Class>(
 /**
  * Requires a mixin.
  *
+ * @remarks
+ * This utility type is useful for ensuring that a class extends a specific mixin.
+ *
  * @example
  * ```ts
  * class HasHp { hp = 100; }
- * const canAttackMixin = (Base: Class) => class extends Base { canAttack = true; };
+ * const hasHpMixin = classToMixin(HasHp);
+ * const canAttackYourSelfMixin = <T extends Class & RequireMixin<typeof hasHpMixin>>(Base: T) =>
+ * 	class canAttackYourSelf extends Base
+ * 	{
+ * 		canAttack = true;
+ * 		attackYourSelf(dmg:number) { this.hp -= dmg; // See HasHp };
+ * 	}
  * ```
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
