@@ -3,6 +3,7 @@ import type { Class } from "@/types";
 import type { Mixin } from "./types";
 // eslint-disable-next-line @EslintUnicorn/no-keyword-prefix
 import { classToMixin } from "@/utils";
+
 //----------------------
 // Types
 //----------------------

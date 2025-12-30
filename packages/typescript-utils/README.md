@@ -5,4 +5,15 @@
 
 Prepared Test package to Test CLI app with exported programmatic api
 
+## List
+
 - [ ] Name Conventions utils
+- [ ] Mixins
+  - [x] classToMixin
+  - [x] mixinAll
+  - [ ] Mixable (Class)
+- [x] Interceptable
+- [ ] Pipe
+- [x] Singleton
+- [ ] EventBus
+- [ ] Event Emitter
